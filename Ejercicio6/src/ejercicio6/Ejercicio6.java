@@ -25,16 +25,14 @@ public class Ejercicio6 {
         System.out.println("Indique el segundo valor");
         int num2 = leer.nextInt();
         
-        if (num1 < 25) {
-            System.out.println("El primer valor es menor a 25");
+        if (num1 <= 25 & num2 <= 25 ) {
+            System.out.println("Ambos numeros son mayores a 25");
+        } else if (num1 <= 25 & num2 >= 25 ){
+            System.out.println("Solo el primer valor es menor a 25");
+        } else if (num1 > 25 & num2 <= 25 ){
+            System.out.println("Solo el segundo valor es menor a 25");
         } else {
-            System.out.println("El primer valor NO es menor a 25");
-        }
-        
-        if (num2<25) {
-            System.out.println("El segundo valor es menor a 25");
-        }else {
-            System.out.println("El segundo valor NO es menor a 25");
+            System.out.println("Ambos valores son mayores a 25");
         }
     }
     
