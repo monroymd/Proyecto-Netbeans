@@ -21,14 +21,47 @@ ingresado seguido de tantos asteriscos como indique su valor. Por ejemplo:
      */
     public static void main(String[] args) {
         
-        int num1, num2 = 0, num3 = 0, num4 = 0, contador = 4;
-        System.out.println("Indique un numero entre 0 y 20 de " + contador);
-        Scanner leer = new Scanner(System.in);
-        num1 = leer.nextInt();
-        num2 = leer.nextInt();
-        num3 = leer.nextInt();
-        num4 = leer.nextInt();
-
+        int num, num1, num2, num3, num4, contador = 4;
+        
+               
+        do {
+            System.out.println("Indique un numero entre 0 y 20 de " + contador);
+            Scanner leer = new Scanner(System.in);
+            num = leer.nextInt();
+            
+        } while (num > 20 || num <= 0);
+        
+            num1 = num;
+            contador -= 1;
+         do {
+            System.out.println("Indique un numero entre 0 y 20 de " + contador);
+            Scanner leer = new Scanner(System.in);
+            num = leer.nextInt();
+            
+        } while (num > 20 || num <= 0);
+        
+            num2 = num;
+            contador -= 1;
+            
+             do {
+            System.out.println("Indique un numero entre 0 y 20 de " + contador);
+            Scanner leer = new Scanner(System.in);
+            num = leer.nextInt();
+            
+        } while (num > 20 || num <= 0);
+        
+            num3 = num;
+            contador -= 1;
+             do {
+            System.out.println("Indique un numero entre 0 y 20 de " + contador);
+            Scanner leer = new Scanner(System.in);
+            num = leer.nextInt();
+            
+        } while (num > 20 || num <= 0);
+        
+            num4 = num;
+            contador -= 1;
+            
         System.out.print(num1 + ":");
         for (int i = 0; i < num1; i++) {
             System.out.print("*");
