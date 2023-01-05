@@ -43,23 +43,25 @@ la matriz M en la cual empieza el primer elemento de la submatriz P.
         boolean validar = true;
         
         for (int i = 0; i < (matriz.length - 2); i++) {
-            for (int j = 0; j < (matriz.length); j++) {
-                /*if (matriz[i][j] == matriz2[0][0]){
-                    for (int k = 0; k < (matriz2.length); k++) {
-                        for (int l = 0; l < (matriz2.length); l++) {
-                            while (matriz[k][l] == matriz2[k][l]);
-                            System.out.println("La matriz se repite en las posiciones "+ k + l);
-                        }
+            for (int j = 0; j < (matriz.length-2); j++) {
+                if (matriz[i][j] == matriz2[0][0]){
+                    for (int k = i; k < (i + matriz2.length); k++) {
+                        for (int l = j; l < (j + matriz2.length); l++) {
+                            if (matriz2[k][l] == matriz[k][l]){
+                            System.out.println("La matriz se repite en las posiciones "+ k +"," + l);
+                            
+                            }
+                        }    
                     }
-                } else {
-                    validar = false;
-                }
+                } //else {
+                    //validar = false;
+                //}
             }
         }
         if (validar != true){
             System.out.println("Las matrices no coinciden");
         }
-    }   */
+    }   
     
     
 }
