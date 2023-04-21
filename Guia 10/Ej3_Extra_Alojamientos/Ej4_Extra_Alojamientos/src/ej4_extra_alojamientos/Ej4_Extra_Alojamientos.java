@@ -135,6 +135,14 @@ public class Ej4_Extra_Alojamientos {
                 ServicioAlojamiento.mostrarResidenciaDescuento(lista);
                 break;
             case 10:
+                    System.out.println("Quiere continuar?");
+                    String seguir = leer.next();
+                try {
+            } catch (Exception e) {
+                    System.out.println("Error, bebe (borracho) colocar una letra");
+                    System.out.println(e.getMessage());
+                    System.out.println(e.fillInStackTrace());
+            }
                 System.out.println("Muchas Gracias");
                 break;
             
