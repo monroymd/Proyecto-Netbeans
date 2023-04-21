@@ -65,7 +65,7 @@ public class Ej4_Extra_Alojamientos {
 
     public static void main(String[] args) {
         ArrayList<Alojamiento> lista = new ArrayList();
-        Scanner leer = new Scanner (System.in).useDelimiter("\n");
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
         Hotel_4_Estrellas h4 = new Hotel_4_Estrellas();
         Hotel_5_Estrellas h5 = new Hotel_5_Estrellas();
@@ -75,24 +75,21 @@ public class Ej4_Extra_Alojamientos {
 
         Residencia r1 = new Residencia(20, true, true, true, 800);
         Residencia r2 = new Residencia(30, false, true, false, 1000);
-        
+
         lista.add(h4);
         lista.add(h5);
         lista.add(c1);
         lista.add(c2);
         lista.add(r1);
         lista.add(r2);
-        
-        
+
         for (Alojamiento aux : lista) {
-            if (aux instanceof Hotel){
-            Hotel aux2 = (Hotel) aux;
-            aux2.calularPrecioHabitacion();
+            if (aux instanceof Hotel) {
+                Hotel aux2 = (Hotel) aux;
+                aux2.calularPrecioHabitacion();
             }
         }
-        
-        
-            
+
         System.out.println("-------------MENU-------------");
         System.out.println("Indique metodo de busqueda");
         System.out.println("1) Mostrar Alojamientos");
@@ -105,50 +102,50 @@ public class Ej4_Extra_Alojamientos {
         System.out.println("8) Mostrar Campings con restaurante");
         System.out.println("9) Mostrar Residencias con descuento");
         System.out.println("10) Realizar otra busqueda? S/N");
-        int opcion = leer.nextInt();
-        switch (opcion) {
-            case 1:
-                ServicioAlojamiento.mostrarHoteles(lista);
-                break;
-            case 2:
-                ServicioAlojamiento.mostrarHoteles4(lista);
-                break;
-            case 3:
-                ServicioAlojamiento.mostrarHoteles5(lista);
-                break;
-            case 4:
-                ServicioAlojamiento.mostrarExtraHoteles(lista);
-                break;
-            case 5:
-                ServicioAlojamiento.mostrarCamping(lista);
-                break;
-            case 6:
-                ServicioAlojamiento.mostrarResidencia(lista);
-                break;
-            case 7:
-                ServicioAlojamiento.hotelValorDescendente(lista);
-                break;
-            case 8:
-                ServicioAlojamiento.mostrarCampingRestaurante(lista);
-                break;
-            case 9:
-                ServicioAlojamiento.mostrarResidenciaDescuento(lista);
-                break;
-            case 10:
+        try {
+            int opcion = leer.nextInt();
+            switch (opcion) {
+                case 1:
+                    ServicioAlojamiento.mostrarHoteles(lista);
+                    break;
+                case 2:
+                    ServicioAlojamiento.mostrarHoteles4(lista);
+                    break;
+                case 3:
+                    ServicioAlojamiento.mostrarHoteles5(lista);
+                    break;
+                case 4:
+                    ServicioAlojamiento.mostrarExtraHoteles(lista);
+                    break;
+                case 5:
+                    ServicioAlojamiento.mostrarCamping(lista);
+                    break;
+                case 6:
+                    ServicioAlojamiento.mostrarResidencia(lista);
+                    break;
+                case 7:
+                    ServicioAlojamiento.hotelValorDescendente(lista);
+                    break;
+                case 8:
+                    ServicioAlojamiento.mostrarCampingRestaurante(lista);
+                    break;
+                case 9:
+                    ServicioAlojamiento.mostrarResidenciaDescuento(lista);
+                    break;
+                case 10:
                     System.out.println("Quiere continuar?");
                     String seguir = leer.next();
-                try {
-            } catch (Exception e) {
-                    System.out.println("Error, bebe (borracho) colocar una letra");
-                    System.out.println(e.getMessage());
-                    System.out.println(e.fillInStackTrace());
+                    System.out.println("Muchas Gracias");
+                    break;
+
             }
-                System.out.println("Muchas Gracias");
-                break;
-            
+        } catch (RuntimeException e) {
+            System.out.println("Error " + e.getMessage());
+            System.out.println(e.fillInStackTrace());
+
+        
         }
-        
-        
+
     }
 
 }
